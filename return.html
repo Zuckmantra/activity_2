@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Actividad 4</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body id="return">
+        <dialog open>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path fill="#888888" d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8
+                  8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10
+                  10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2v6Z" />
+              </svg>
+              Esto es un ejemplo de mensaje de diálogo.
+            </p>
+            <form method="dialog">
+              <button>Aceptar</button>
+            </form>
+          </dialog>
+          <form id="colorForm">
+            <input type="radio" id="blue" name="color" value="blue" checked><label for="blue">Azul</label>
+            <input type="radio" id="red" name="color" value="red"><label for="red">Rojo</label>
+          </form>
+        <script>
+            const form = document.getElementById('colorForm');
+            const body = document.getElementById('return');
+        
+            function applyBackgroundColor() {
+              const selectedColor = document.querySelector('input[name="color"]:checked').value;
+              body.style.backgroundColor = selectedColor;
+            }
+        
+            window.addEventListener('DOMContentLoaded', applyBackgroundColor);
+        
+
+            form.addEventListener('change', applyBackgroundColor);
+          </script>
+    </body>
+</html>
